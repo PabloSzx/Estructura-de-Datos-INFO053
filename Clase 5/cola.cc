@@ -27,7 +27,7 @@ int main(int argc, char const *argv[]) {
 
   while (1) {
     cout << "\n";
-    cout << "0: Ingresarss un elemento \n";
+    cout << "0: Ingresar un elemento \n";
     cout << "1: Eliminar un elemento \n";
     cout << "2: Imprimir lista \n";
     cout << "3: Salirs \n";

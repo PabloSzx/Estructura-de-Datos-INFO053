@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <iostream>
-#include "pila.h"
+#include "pilacircular.h"
 
 using namespace std;
 
@@ -30,8 +30,8 @@ int main(int argc, char const *argv[]) {
     cout << "0: Ingresar un elemento \n";
     cout << "1: Eliminar un elemento \n";
     cout << "2: Imprimir lista \n";
-    cout << "3: Salirs \n";
-    cout << "Seleccione que operacion deseasss: \n";
+    cout << "3: Salir \n";
+    cout << "Seleccione que operacion deseas: \n";
     cin >> (seleccion);
 
     switch (seleccion) {
