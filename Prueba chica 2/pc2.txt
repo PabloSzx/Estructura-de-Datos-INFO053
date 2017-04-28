@@ -1,0 +1,14 @@
+PRUEBA CHICA 2 (2 Personas)
+Viernes, 28 de Abril, 2017
+
+
+1) Extender la implementacion de la cola para que mantenga una variable largo
+siempre actualizada.
+
+2) Implementar la estructura especial "pila de colas" en pcolas.h y sus funcones
+pcolas_crear, pcolas_insertar, pcolas_eliminar, pcolas_imprimir.
+
+3) Implemente la funcion "pcolas_invertir" que invierte la pila de colas.
+
+4) Desarrolle un ejemplo en el main que haga uso de todas las funciones
+requeridas, imprimiendo la pila de colas a medida que sufre modificaciones.

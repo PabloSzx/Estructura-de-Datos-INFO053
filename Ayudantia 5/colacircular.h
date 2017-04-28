@@ -78,20 +78,44 @@ void imprimir(lista **lista) {
 
 }
 
-void eliminar(lista **lista) {
-  nodo *ptr = (*lista)->inicio;
-  nodo *sig = ptr->siguiente;
+// void eliminar(lista **lista) {
+//   nodo *ptr = (*lista)->inicio;
+//   nodo *sig = ptr->siguiente;
+//
+//   if (ptr->siguiente == ptr) {
+//     free(ptr);
+//     (*lista)->inicio = NULL;
+//   } else {
+//     free(ptr);
+//     (((*lista)->inicio)->anterior)->siguiente = (sig);
+//     (*lista)->inicio = (sig);
+//   }
+//   (*lista)->largo--;
+//
+// }
 
-  if (ptr->siguiente == ptr) {
-    free(ptr);
-    (*lista)->inicio = NULL;
-  } else {
-    free(ptr);
-    (((*lista)->inicio)->anterior)->siguiente = (sig);
-    (*lista)->inicio = (sig);
+void eliminar(lista **lista, char *nom){
+
+  nodo *j=(*lista)->inicio;
+  if(strcmp(j->nombre,nom)==0){
+    (*lista)->inicio=j->siguiente;
+    (*lista)->inicio->anterior=NULL;
+    free(j);
   }
-  (*lista)->largo--;
+  else{
+    while (strcmp(j->nombre,nom)!=0){
+        printf("%i\n",strcmp(j->nombre,nom) );
+        j=j->siguiente;
 
-}
+      }
+      nodo *r=j->siguiente;
+      nodo *a=j->anterior;
+      free(j);
+      a->siguiente=r;
+      r->anterior=a;
+
+
+    }
+  }
 
 #endif
