@@ -1,0 +1,29 @@
+ABB (arbol binario de busqueda) o BST (binary search tree)
+
+regla:
+         nodo
+        /   \
+    menor   mayor
+
+
+copiar codigo base: 
+scp -P 2222 -r apuach@apophis.dcc.uchile.cl:lab05-bst .
+
+1) Implementar la funcion insertar
+
+2) Implementar la funcion buscar
+
+3) Implementar la funcion eliminar
+
+4) Ver como cambia la forma del arbol cuando se hacen inserciones de valores consecutivos, ej: 1, 2, 3, 4, 5
+
+5) Implementar la funcion altura
+
+6) Implementar funcion "int bfactor(nodo *r)" que es el factor de balance de un nodo
+
+7) Implementar "int arbol_balanceado(nodo *r)" que retorna 1 si un arbol esta balanceado o 0 sino.
+
+8) Implementar la funcion rotacion der e izq, de un nodo con sub-arboles.
+
+
+

@@ -1,0 +1,8 @@
+1) Modificar definicion de nodo para un arbol binario
+2) Implementar insertar, buscar, imprimir
+usando una regla de que
+(x)-derecha-> (der>x) -izquierda-->(izq<x)
+3) Experimentar con distintos ordenes de insercion
+a) arbitrario -> USUARIO
+b) secuencial -> 1,2,3,4..
+c) aleatorio -> 5,2,1,3,4
