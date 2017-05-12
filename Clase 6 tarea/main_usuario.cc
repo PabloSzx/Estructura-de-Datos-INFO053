@@ -23,8 +23,6 @@ int main() {
     cout << "\n4.- Factor de balanceo del arbol.";
     cout << "\n5.- Si el arbol es balanceado.";
     cout << "\n6.- Invertir el arbol en un nodo en especifico.";
-    cout << "\n7.- Orden vertical del arbol.";
-
 
     int choice, n;
     cout << "\n\nIngrese un numero segun el comando que desea realizar: ";
@@ -63,9 +61,7 @@ int main() {
         cin >> n;
         arbol_invertir(&arb, n);
         break;
-      case 7:
-        verticalOrder(arb->c);
-        break;
+
       default:
         cout << "\nNo se identifico el comando a realizar!!";
     }

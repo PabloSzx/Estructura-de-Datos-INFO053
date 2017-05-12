@@ -17,12 +17,15 @@ int main() {
 
   arbol *arb = arbol_crear(rand() % limit);
 
-  for (int i = 0; i < (largo); i++) {
-    n = rand() % limit;
+  for (int i = 0; i < 8; i++) {
+    n = (rand() % limit) * i;
     arbol_insertar(&arb, n);
   }
 
   imprimir_arbol_preorden(&arb);
+
+  designarHorizontal(&arb);
+  verticalOrder(arb->c);
 
   cout << "\nEl arbol tiene " << arb->largo << " nodos\n";
 

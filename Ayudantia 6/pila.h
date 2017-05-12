@@ -11,6 +11,8 @@ using namespace std;
 
 typedef struct nodo{
    int      num;
+   int      vertical;
+   int      horizontal;
    struct   nodo *right;
    struct   nodo *left;
 } nodo;
