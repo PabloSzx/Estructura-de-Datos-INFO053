@@ -10,9 +10,9 @@
 using namespace std;
 
 typedef struct nodo{
-   int      num;
-   struct   nodo *right;
-   struct   nodo *left;
+  int      num;
+  struct   nodo *right;
+  struct   nodo *left;
 } nodo;
 
 typedef struct nodopila {
@@ -28,10 +28,10 @@ typedef struct pila {
 
 
 pila* pila_crear(){
-    pila* q = (pila*)malloc(sizeof(pila));
-    q->inicio = NULL;
-    q->largo = 0;
-    return q;
+  pila* q = (pila*)malloc(sizeof(pila));
+  q->inicio = NULL;
+  q->largo = 0;
+  return q;
 }
 
 void insertar_pila(pila **pila, nodo *nodo) {

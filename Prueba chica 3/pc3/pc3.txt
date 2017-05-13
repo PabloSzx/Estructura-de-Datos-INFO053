@@ -1,0 +1,25 @@
+Prueba Chica 3
+19 Mayo 2017,
+
+Usted disponde de una implementacion de un ABB (arbol binario de busqueda) o BST (binary search tree)
+
+la regla del arbol es:
+         nodo
+        /   \
+    menor   mayor
+
+Haciendo uso de las funciones ya existentes a medida que sea posible, resuelva
+los siguientes ejercicios:
+
+1) Escriba una funcion llamada "int desbalanceado(nodo *r)" que retorna '1'
+si el arbol esta desbalanceado en alguna zona, o bien '0' si esta correctamente
+balanceado en todos sus nodos.
+
+
+2) Escriba una funcion llamada "void balancear(nodo **r)", que balancea un arbol hasta que ningun
+nodo este desbalanceado.
+
+
+
+3) Escriba una funcion llamada "int dpath(nodo *r)" que recibe la raiz de un
+arbol y retorna la diferencia entre el camino mas largo y el mas corto de un arbol.  

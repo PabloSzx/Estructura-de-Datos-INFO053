@@ -25,16 +25,16 @@ int main() {
     cout << "\n";
     switch (choice) {
       case 0:
-        cout <<"\nIngrese el numero que desea ingresar en el arbol: ";
-        cin >> n;
-        arbol_insertar(&arb, n);
-        break;
+      cout <<"\nIngrese el numero que desea ingresar en el arbol: ";
+      cin >> n;
+      arbol_insertar(&arb, n);
+      break;
       case 1:
-        imprimir_arbol_preorden(&arb);
-        cout << "\nEl arbol tiene " << arb->largo << " nodos\n";
-        break;
+      imprimir_arbol_preorden(&arb);
+      cout << "\nEl arbol tiene " << arb->largo << " nodos\n";
+      break;
       default:
-        cout << "\nNo se identifico el comando a realizar!!";
+      cout << "\nNo se identifico el comando a realizar!!";
     }
   }
 

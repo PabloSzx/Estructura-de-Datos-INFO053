@@ -10,16 +10,16 @@
 using namespace std;
 
 typedef struct arbol{
-    nodo *c;
-    int largo;
+  nodo *c;
+  int largo;
 }arbol;
 
 nodo* nodo_crear(int num){
-    nodo *a = (nodo*)malloc(sizeof(nodo));
-    a->num = num;
-    a->right = NULL;
-    a->left = NULL;
-    return a;
+  nodo *a = (nodo*)malloc(sizeof(nodo));
+  a->num = num;
+  a->right = NULL;
+  a->left = NULL;
+  return a;
 }
 
 void nodo_insertar(nodo* q, nodo* n) {
@@ -39,21 +39,21 @@ void nodo_insertar(nodo* q, nodo* n) {
 }
 
 arbol* arbol_crear(int n){
-    arbol* q = (arbol*)malloc(sizeof(arbol));
-    nodo* nd = nodo_crear(n);
-    q->c = nd;
-    q->largo = 0;
-    return q;
+  arbol* q = (arbol*)malloc(sizeof(arbol));
+  nodo* nd = nodo_crear(n);
+  q->c = nd;
+  q->largo = 0;
+  return q;
 }
 
 
 void arbol_insertar(arbol** q, int num){
-    nodo *n = nodo_crear(num);
-    nodo *raiz = (*q)->c;
+  nodo *n = nodo_crear(num);
+  nodo *raiz = (*q)->c;
 
-    nodo_insertar(raiz, n);
+  nodo_insertar(raiz, n);
 
-    (*q)->largo++;
+  (*q)->largo++;
 }
 
 nodo* buscar_nodo(arbol** q, int num) {

@@ -2,19 +2,7 @@
 #define NODO_H
 
 #include <iostream>
-#include <limits>
 
-int maximo(int a, int b){
-    return a > b ? a : b;
-}
-
-int minimo(int a, int b){
-    return a < b? a : b;
-}
-
-int absoluto(int a) {
-  return a < 0 ? -a : a;
-}
 
 typedef struct nodo{
     int val;
@@ -22,10 +10,30 @@ typedef struct nodo{
     struct nodo *der;
 }nodo;
 
-int bfactor(nodo*  a);
-// int preorden(nodo *a, int factorAnterior);
+ //PABLO SAEZ PARRA
+ //19.233.043-2
+
+nodo* crear_nodo(int val);
+int eshoja(nodo *r);
+void imprimir(nodo *r, int depth, int *padres);
+void bst_insertar(nodo **r, int val);
+nodo* bst_buscar(nodo **r, int val);
+nodo** bst_buscar_puntero(nodo **r, int val);
+void bst_eliminar(nodo **r);
+int altura(nodo *r);
+int bfactor(nodo *r);
+void balanceo(nodo **p, bool *siga) ;
+bool arbol_balanceado(nodo **p) ;
+void rot_der(nodo **p);
+void rot_izq(nodo **p);
+
 
 using namespace std;
+
+int absoluto(int a) {
+  return a < 0 ? -a : a;
+}
+
 
 nodo* crear_nodo(int val){
     nodo *n = (nodo*)malloc(sizeof(nodo));
@@ -132,30 +140,11 @@ void bst_eliminar(nodo **r){
   }
 }
 
-// (4) recorrido en preorden para verificar balanceo
-
-void balanceo(nodo **p, bool *siga) {
-
-  if (*siga) {
-    int factor = bfactor(*p);
-    if (absoluto(factor) <= 1) {
-      if ((*p)->izq != NULL) {
-        balanceo(&(*p)->izq, siga);
-      }
-      if ((*p)->der != NULL) {
-        balanceo(&(*p)->der, siga);
-      }
-    } else {
-      *siga = false;
-    }
-  }
-
-}
 
 // (5)
 int altura(nodo *r){
   if (r == NULL) {
-    return 0;
+    return -1;
   } else {
     return (1 + max(altura(r->izq), altura(r->der)));
   }
@@ -170,21 +159,119 @@ int bfactor(nodo *r){
 
 // (7)
 
-bool arbol_balanceado(nodo **p) {
-  bool siga = true;
+void esDesbalancedo(nodo **p, bool *siga) {
 
-  balanceo(p, &siga);
+  if (!(*siga)) {
+    int factor = bfactor(*p);
+    if (absoluto(factor) <= 1) {
+      if ((*p)->izq != NULL) {
+        esDesbalancedo(&(*p)->izq, siga);
+      }
+      if ((*p)->der != NULL) {
+        esDesbalancedo(&(*p)->der, siga);
+      }
+    } else {
+      *siga = true;
+    }
+  }
+
+}
+
+void balancear(nodo **r) {
+  if ((*r) != NULL) {
+    nodo **p = r;
+    int factor = bfactor(*p);
+    nodo *der = (*p)->der;
+    nodo *izq = (*p)->izq;
+      if (factor > 1) {
+        rot_izq(p);
+      } else if (factor < -1) {
+        rot_der(p);
+      }
+      balancear(&(*r)->der);
+      balancear(&(*r)->izq);
+  }
+
+}
+
+bool arbol_desbalanceado(nodo **p) {
+  bool siga = false;
+
+  esDesbalancedo(p, &siga);
 
   return siga;
 }
 
+void balance(nodo **p) {
+  int factor = bfactor(*p);
+  int derFactor = 0;
+  int izqFactor = 0;
+
+  if ((*p)->der != NULL) {
+    derFactor = bfactor((*p)->der);
+  } else {
+  }
+  if ((*p)->izq != NULL) {
+    izqFactor = bfactor((*p)->izq);
+  }
+  if (factor > 1 && derFactor >= 0) {
+    rot_izq(p);
+    balance(p);
+  }
+  else if (factor < -1 && izqFactor <= 0) {
+    rot_der(p);
+    balance(p);
+  } else {
+      if ((*p)->izq != NULL) {
+        balance(&(*p)->izq);
+      }
+      if ((*p)->der != NULL) {
+        balance(&(*p)->der);
+      }
+  }
+
+}
+
+
 // (8)
-int rot_der(nodo **r){
-  return 1;
+void rot_der(nodo **p){
+  nodo *q = (*p)->izq;
+  nodo *b = q->der;
+
+  if (q != NULL) {
+    (*p)->izq =b;
+    q->der = (*p);
+    (*p) = q;
+  } else {
+    cout << "No se puede hacer la rotacion" << endl;
+  }
 }
 
 // (8)
-int rot_izq(nodo **r){
-    return 1;
+void rot_izq(nodo **p){
+  nodo *q = (*p)->der;
+  nodo *b = q->izq;
+
+  if (q != NULL) {
+    (*p)->der = b;
+    q->izq = (*p);
+    (*p) = q;
+  } else {
+    cout << "No se puede hacer la rotacion" << endl;
+  }
 }
+
+
+int alturaMinima(nodo *r){
+  if (r == NULL) {
+    return 1;
+  } else {
+    return (1 + min(altura(r->izq), altura(r->der)));
+  }
+}
+
+int dpath(nodo *r) {
+  return altura(r) - alturaMinima(r);
+}
+
 #endif
