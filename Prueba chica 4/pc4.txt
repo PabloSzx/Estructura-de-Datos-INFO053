@@ -1,0 +1,16 @@
+Prueba chica 4
+29 de Mayo 2017.
+
+Usted tiene una implementacion de MINHEAP en heap.h y un codigo main.c que crea
+un arreglo de 'n' numeros en orden aleatorio. En esta pc4, usted va a intentar
+utilizar un heap para ordenar un arreglo.
+
+(1) (3.0pts) Implemente la funcion "void ordenar1(int *nums, int n)" en main.c
+que usa un heap para ordenar el arreglo "nums". NOTA: usar las funciones del
+heap.
+
+(2) (3.0pts) Modifique maxheap.h para que este funcione correctamente
+(actualmente funciona como minheap) y uselo para ordenar en la funcion "ordenar2".
+
+NOTA: el codigo dentro de la funcion "int main(int argc, char** argv)" debe
+quedar intacto.
