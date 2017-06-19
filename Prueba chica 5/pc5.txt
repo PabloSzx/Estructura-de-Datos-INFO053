@@ -1,0 +1,19 @@
+Prueba Chica 5:
+Hashing universal de strings
+
+Usted tiene la solucion de la clase pasada, que es una implementacion de
+hashing universal de enteros.
+En esta prueba usted implementara hashing universal de strings.
+
+1) (3pts) Convierta el programa para que en vez de insertar "n" numeros
+aleatorios en el hash, inserte "n" strings aleatorios, todos de largo L=10.
+Verifique que
+compile y ejecute hasta este punto antes de pasar al 2).
+
+2) (3pts) Implemente el hashing de strings. Obtenga el valor de entrada x para
+la funcion universal h(x) a partir de los caracteres del string.
+Para ello utilice la reduccion
+
+    x = sum_{de 0 a L}  ( s[i] * a^i ) mod p 
+
+    donde s[i] es el i-esimo caracter de un string "s".

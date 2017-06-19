@@ -18,6 +18,8 @@ typedef struct nodo {
 
 nodo* nodo_crear(int num) {
   nodo *a = (nodo*)malloc(sizeof(nodo));
+  // nodo *a = (nodo*)malloc(BUF_SIZE);
+
   a->num = num;
   a->nexo = NULL;
   return a;
