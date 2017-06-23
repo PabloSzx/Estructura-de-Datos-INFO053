@@ -1,0 +1,22 @@
+Prueba Chica 6:
+Manipulando Quicksort
+
+Usted tiene una implementacion de quicksort e insercion_sort funcionando y ordenan de menor a mayor un arreglo de "n" numeros aleatorios.
+
+
+1) (1pts) Mida el tiempo de ejecucion tanto de quicksort e insercion, e imprima los tiempos al terminar el programa. 
+
+
+2) (1pts) Escriba una funcion "check_ordenado(int *a, int n)" que recibe un arreglo y retorna 1 o 0 dependiendo si esta ordenado o
+desordenado. Usela para checkear que ambos algoritmos hayan ordenado correctamente. 
+
+
+2) (2pts) Modifique el codigo fuente para que el programa sea ejecutado de la forma "./prog n c" donde "c" puede ser 0 o 1. Si 
+c=0 entonces se genera el arreglo desordenado tal como funciona actualmente. Si c=1 entonces se genera un arreglo ordenado de mayor a menor.
+
+
+2) (2pts) Extienda el programa para que ahora funcione de la forma "./prog n c p", donde p=0 significa obtener el pivote de
+quicksort en el comienzo del segmento asignado, y p=1 significa obtener el pivote de forma aleatoria en el segmento asignado.
+
+
+nota: actualize la verificacion de argumentos para que tambien indique mensaje correcto en caso de dar la cantidad invalida de parametros.

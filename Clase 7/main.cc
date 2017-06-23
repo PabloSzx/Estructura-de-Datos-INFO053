@@ -12,11 +12,16 @@ int main(int argc, char **argv){
   int padres[MAXDEPTH];
   nodo *r = NULL;
 
-  bst_insertar(&r, 5);
-  bst_insertar(&r, 2);
-  bst_insertar(&r, 8);
-  bst_insertar(&r, 9);
-  bst_insertar(&r, 4);
+  bst_insertar(&r, 10);
+  bst_insertar(&r, 20);
+  bst_insertar(&r, 30);
+  bst_insertar(&r, 40);
+  bst_insertar(&r, 50);
+  // bst_insertar(&r, 5);
+  // bst_insertar(&r, 2);
+  // bst_insertar(&r, 8);
+  // bst_insertar(&r, 9);
+  // bst_insertar(&r, 4);
 
 
 
